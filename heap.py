@@ -55,8 +55,6 @@ class MaxHeap:
 
         return max_value
 
-    def peek(self):
-        return self.heap[0] if self.heap else None
 
 
 def find_kth_smallest(nums, k):
@@ -64,12 +62,10 @@ def find_kth_smallest(nums, k):
 
     for num in nums:
         max_heap.insert(num)
-
         if len(max_heap.heap) > k:
             max_heap.remove()
 
-    return max_heap.peek()
-
+    return max_heap.heap[0]
 
 
 # Test cases
